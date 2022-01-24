@@ -22,9 +22,13 @@
     
         $testoOriginale = "Io sono il testo originale senza censura.";
 
+        $lunghezzaTOriginale = strlen($testoOriginale);
+
         $word = $_GET["word"];
 
         $testoCensurato = str_replace($word , "***", $testoOriginale);
+
+        $lunghezzaTCensurato = strlen($testoCensurato);
 
     ?>
 
@@ -38,6 +42,12 @@
 
         </p> 
 
+        <span>
+
+        Lunghezza originale <?php echo $lunghezzaTOriginale; ?>
+
+        </span>
+
     </h2>
 
     <h2>Testo censurato:
@@ -46,7 +56,13 @@
 
             <?php echo $testoCensurato; ?> 
 
-        </p> 
+        </p>
+
+        <span>
+
+        Lunghezza con censura <?php echo $lunghezzaTCensurato; ?>
+
+        </span>
 
     </h2>
 
